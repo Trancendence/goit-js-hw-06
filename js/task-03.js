@@ -12,3 +12,9 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const photo = document.querySelector(".gallery");
+photo.insertAdjacentHTML("beforebegin", images);
+photo.src = images.url;
+// photo.insertAdjacentHTML("beforebegin", "<h2>Popular technologies</h2>");
