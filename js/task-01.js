@@ -1,9 +1,13 @@
-console.log(`Number of categories: ${document.getElementById('categories').getElementsByTagName('h2').length}`)
-console.log("Category: Animals");
-console.log(`Elements: ${document.getElementById('animals').getElementsByTagName('li').length}`);
-console.log("Category: Products");
-console.log(`Elements: ${document.getElementById('item').getElementsByTagName('li').length}`);
-console.log("Category: Technologies");
-console.log(`Elements: ${document.getElementById('technologies').getElementsByTagName('li').length}`);
+const list = document.querySelectorAll('li.item');
 
-// Task 1
+console.log(`Number of categories: ${list.length}`);
+
+const ul = document.querySelectorAll('#categories>li');
+
+ul.forEach(el => {
+  console.log(
+`Category: ${el.firstElementChild.textContent} 
+Elements: ${el.lastElementChild.children.length}`,
+  );
+});
+
