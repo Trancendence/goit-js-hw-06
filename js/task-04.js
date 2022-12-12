@@ -1,14 +1,21 @@
-let plus = document.getElementById("plus");
-let minus = document.getElementById("minus");
-let count = document.getElementById("value");
-let counterValue = 0;
+const button = {
+plus: document.querySelector("[data-action='increment']"),
+minus: document.querySelector("[data-action='decrement']"),
+val: document.querySelector("#value"),
+  };
 
-plus.onclick = function() {
-counterValue++;
-count.innerHTML = counterValue;
-};
-
-minus.onclick = function() {
-counterValue--;
-count.innerHTML = counterValue;
-};
+  let counterValue = 0;
+  const increment = () => {
+    counterValue += 1;
+  
+   button.val.textContent = counterValue;
+  };
+  
+  const decrement = () => {
+    counterValue -= 1;
+  
+    button.val.textContent = counterValue;
+  };
+  
+  button.plus.addEventListener("click", increment);
+  button.minus.addEventListener("click", decrement);
