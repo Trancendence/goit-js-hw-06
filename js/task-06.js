@@ -1,12 +1,12 @@
 let inputEl = document.querySelector('#validation-input');
 
-let numbers = inputEl.dataset.length;
+let requiredlength = inputEl.dataset.length;
 
 const input = document.querySelector('input');
 inputEl.addEventListener('change', e => {
   const text = e.target.value;
 
-  if (text.length === +numbers) {
+  if (text.length === +Number(+requiredlength)) {
     inputEl.classList.add('valid');
     inputEl.classList.remove('invalid');
   } else {
